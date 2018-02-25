@@ -17,12 +17,13 @@ namespace RentBike.Models
             rents = new List<Rent>();
         }
 
+        //Se obtiene el precio total de los alquileres de bicicletas del cliente
         public double TotalPrice()
         {
             double TotalPrice = 0;
             foreach (Rent r in rents)
             {
-                TotalPrice += TotalPrice + r.totalPriceRent;
+                TotalPrice += r.totalPriceRent;
             }
             if (rents.Count >= 3 && rents.Count <= 5) {
                 return TotalPrice * 0.7;
@@ -30,6 +31,7 @@ namespace RentBike.Models
             return TotalPrice;
         }
 
+        //Se devuelve el alquiler
         public void ReturnsBike()
         {
             rents = new List<Rent>();

@@ -9,6 +9,8 @@ namespace RentBike.Models
     {
         public TypeRent typeRent { get; set; }
         public double amountTime { get; set; }
+
+        //Se calcula el precio del alquiler por el tiempo solicitado
         public double totalPriceRent
         {
             get

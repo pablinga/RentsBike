@@ -10,10 +10,24 @@ namespace RentBike.Models
         public TimeEnum time { get; set; }
         public int price { get; set; }
 
-        public TypeRent(TimeEnum time, int price)
+        public TypeRent(TimeEnum time)
         {
             this.time = time;
-            this.price = price;
+            switch (time)
+            {
+                case TimeEnum.Hour:
+                    this.price = 5;
+                    break;
+                case TimeEnum.Day:
+                    this.price = 20;
+                    break;
+                case TimeEnum.Week:
+                    this.price = 60;
+                    break;
+                default:
+                    this.price = 0;
+                    break;
+            }         
         }
     }
 }
